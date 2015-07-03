@@ -6,11 +6,22 @@ var minify_css = require('gulp-minify-css');
 var runSequence = require('gulp-run-sequence');
 var webserver = require('gulp-webserver');
 
-gulp.task('compress_js', function() {
+gulp.task('compress_library_js', function() {
   return gulp.src([
     'bower_components/angular/angular.js'
   ])
-    .pipe(concat('all.min.js'))
+    .pipe(concat('core.min.js'))
+    .pipe(gulp.dest('js'));
+});
+
+gulp.task('compress_app_js', function() {
+  return gulp.src([
+    'js/app/controllers/*.js',
+    'js/app/directives/*.js',
+    'js/app/templates/*.js',
+    'js/app/app.js'
+  ])
+    .pipe(concat('app.min.js'))
     .pipe(gulp.dest('js'));
 });
 
@@ -31,7 +42,7 @@ gulp.task('webserver', function() {
 });
 
 gulp.task('precompile:assets', function(s){
-  runSequence('compress_js','compress_css',s);
+  runSequence('compress_library_js','compress_app_js','compress_css',s);
 })
 
 gulp.task('serve', function(s){

@@ -2,4 +2,5 @@ npm-debug.log
 node_modules/
 bower_components/
 css/all.min.css
-js/all.min.js
+js/app.min.js
+js/core.min.js
