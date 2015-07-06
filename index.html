@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="appUi">
   <head>
     <meta charset="utf-8">
+    <base href="/">
     <title>Player UI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Players UI">
@@ -15,8 +16,8 @@
     </script>
   </head>
 
-  <body class='index preview' data-offset='0' data-spy='scroll' data-target='.subnav' id='page-top' ng-app="appUi">
-    <div class='navbar navbar-default navbar-fixed-top' ng-controller="UiNavigationController as navigation">
+  <body class='index preview' data-offset='0' data-spy='scroll' data-target='.subnav' id='page-top'>
+    <div class='navbar navbar-default navbar-fixed-top'>
       <div class='container'>
         <div class='navbar-header-page-scroll'>
           <button class='navbar-toggle' data-target='main-menu' data-toggle='collapse'>
@@ -29,13 +30,11 @@
         </div>
       </div>
     </div>
-    <section id="main" ng-controller="UiSectionController as section">
+    <section id="main">
       <div class="container">
-        <section-title></section-title>
-        <div class="app">
-          <section-options></section-options>
-          <section-content></section-content>
-        </div>
+        <section class="content"> 
+          <div class="app" ng-view></div>
+        </section>
       </div>
     </section>
   </body>
