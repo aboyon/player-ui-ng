@@ -8,7 +8,7 @@
     "appUi.matches"
   ]).factory('apiDataEndpoint', function() {
       return function(resource_path) {
-        return "http://localhost:3000/api/v1/" + resource_path
+        return API_BASE_ENDPOINT + resource_path
       };
     });
 })();
