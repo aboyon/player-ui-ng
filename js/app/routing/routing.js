@@ -1,17 +1,18 @@
 (function(){
   angular.module('appUi.routing', ['ngRoute'])
-    .controller('PlayerController', function($scope, $route, $routeParams, $location) {
-      $scope.name = "PlayerController";
-      $scope.$route = $route;
-      $scope.$location = $location;
-      $scope.$routeParams = $routeParams;
-    })
-
     .config(function($routeProvider, $locationProvider) {
       $routeProvider
        .when('/players', {
         templateUrl: 'js/app/templates/players.html',
-        controller: 'PlayerController'
+        controller: 'PlayersController'
+      })
+       .when('/teams', {
+        templateUrl: 'js/app/templates/teams.html',
+        controller: 'TeamsController'
+      })
+       .when('/matches', {
+        templateUrl: 'js/app/templates/matches.html',
+        controller: 'MatchesController'
       });
 
     $locationProvider.html5Mode(true);
