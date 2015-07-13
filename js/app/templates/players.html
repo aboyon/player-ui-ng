@@ -1,1 +1,8 @@
-<h1>Players!!!</h1>
+<h1>Players</h1>
+<table width="100%" class="table table-stripped">
+  <tr ng-repeat="player in players">
+    <td>{{ player.name }}</td>
+    <td>{{ player.dob }}</td>
+    <td>{{ player.nationality }}</td>
+  </tr>
+</table>

@@ -1,1 +1,8 @@
-<h1>Teams!!!</h1>
+<h1>Teams</h1>
+<table width="100%" class="table table-stripped">
+  <tr ng-repeat="team in teams">
+    <td>{{ team.name }}</td>
+    <td>{{ player.created_at }}</td>
+    <td>{{ player.updated_at }}</td>
+  </tr>
+</table>
