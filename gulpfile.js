@@ -9,7 +9,9 @@ var webserver = require('gulp-webserver');
 gulp.task('compress_library_js', function() {
   return gulp.src([
     'bower_components/angular/angular.js',
-    'bower_components/angular-route/angular-route.min.js'
+    'bower_components/angular-route/angular-route.min.js',
+    'bower_components/jquery/dist/jquery.min.js',
+    'bower_components/bootstrap/dist/js/bootstrap.min.js'
   ])
     .pipe(concat('core.min.js'))
     .pipe(gulp.dest('js'));

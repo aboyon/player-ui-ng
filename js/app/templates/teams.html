@@ -1,8 +1,23 @@
 <h1>Teams</h1>
 <table width="100%" class="table table-stripped">
   <tr ng-repeat="team in teams">
-    <td>{{ team.name }}</td>
-    <td>{{ player.created_at }}</td>
-    <td>{{ player.updated_at }}</td>
+    <td><a href="/teams/{{ team.id }}">{{ team.name }}</a></td>
+    <td>{{ team.created_at | date:'medium' }}</td>
+    <td>{{ team.updated_at | date:'medium' }}</td>
+    <td>
+      <div class='btn-group pull-right'>
+        <button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+          Actions <span class='caret'></span>
+        </button>
+        <ul class='dropdown-menu'>
+          <li>
+            <a class='navigate edit-player-btn' href='/teams/{{ team.id }}/edit'>Edit</a>
+          </li>
+          <li>
+            <a class='navigate show-player-btn' href='/teams/{{ team.id }}'>View</a>
+          </li>
+        </ul>
+      </div>
+    </td>
   </tr>
 </table>

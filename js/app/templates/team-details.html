@@ -1,0 +1,28 @@
+<h1>{{ team.name }}</h1>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Current team</div>
+      <div class="panel-body">
+        players
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Honours</div>
+      <div class="panel-body">
+        <table width="100%" class="table table-striped table-bordered">
+          <tbody>
+            <tr ng-repeat="honour in team.honours">
+              <td>{{ honour.name }}</td>
+              <td width="60">{{ honour.year }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

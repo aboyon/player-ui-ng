@@ -1,7 +1,6 @@
 (function() {
   var playersApp = angular.module("appUi", [
     "appUi.navigation",
-    "appUi.sectionContent",
     "appUi.routing",
     "appUi.players",
     "appUi.teams",

@@ -9,6 +9,9 @@
        .when('/teams', {
         templateUrl: 'js/app/templates/teams.html',
         controller: 'TeamsController'
+      }).when('/teams/:team_id', {
+        templateUrl: 'js/app/templates/team-details.html',
+        controller: 'TeamController'
       })
        .when('/matches', {
         templateUrl: 'js/app/templates/matches.html',
